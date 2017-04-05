@@ -38,8 +38,26 @@ const sketchFn = (s) => {
 }
 
 const myP5 = new p5(sketchFn, 'p5-canvas')
+const favicon = document.querySelector("#favicon")
+let iconOne = true
+
+
+const swapFavicon = () => {
+  if (iconOne) {
+    favicon.href = "./images/man-frowning.png"
+  }
+  else {
+    favicon.href = "./images/man-bowing.png"
+  }
+
+  iconOne = !iconOne;
+}
 
 window.onload = () => {
   const gifLinks = document.querySelectorAll(".gif")
   GifLinks( gifLinks )
+
+  setInterval(swapFavicon, 1000)
+
+
 }
