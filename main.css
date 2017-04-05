@@ -38,7 +38,7 @@ a:hover {
 }
 
 .container {
-  max-width: 480px;
+  max-width: 64rem;
   margin: 4rem;
 }
 
@@ -48,6 +48,11 @@ a:hover {
   left: 0;
   overflow: hidden;
   line-height: 0;
+}
+
+.horizontal-list li {
+  display: inline;
+  padding-right: 8px;
 }
 
 
