@@ -3,7 +3,7 @@ const sketchFn = (s) => {
 
   s.setup = () => {
     // s.pixelDensity(s.displayDensity())
-    s.createCanvas(s.windowWidth, 240)
+    s.createCanvas(s.windowWidth, 200)
     s.noStroke()
   }
 
