@@ -1,3 +1,6 @@
+import p5 from 'p5.js'
+import gifLinks from 'GifLinks.js'
+
 const sketchFn = (s) => {
   let yOffset = 0
 
@@ -54,10 +57,8 @@ const swapFavicon = () => {
 }
 
 window.onload = () => {
-  const gifLinks = document.querySelectorAll(".gif")
-  GifLinks( gifLinks )
+  const gifs = document.querySelectorAll(".gif")
+  gifLinks( gifs )
 
   setInterval(swapFavicon, 1000)
-
-
 }
