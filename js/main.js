@@ -38,3 +38,8 @@ const sketchFn = (s) => {
 }
 
 const myP5 = new p5(sketchFn, 'p5-canvas')
+
+window.onload = () => {
+  const gifLinks = document.querySelectorAll(".gif")
+  GifLinks( gifLinks, {preload: true} )
+}
