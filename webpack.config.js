@@ -4,16 +4,13 @@ const webpack = require('webpack')
 module.exports = {
   entry: './js/main.js',
   output: {
-    path: path.resolve(__dirname, './js'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
     rules: [
-      { test: /GifLinks.js$/, loaders: ["exports-loader?GifLinks"] },
+      { test: /gifLinks.js$/, loaders: ["exports-loader?gifLinks=GifLinks"] },
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
     ]
-  },
-  resolve: {
-    modules: ['js']
   }
 }
