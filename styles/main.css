@@ -61,15 +61,27 @@ a:hover {
 
 
 @media only screen and (max-width: 460px) {
-  html {
-    font-size: 6px;
+  body {
+    margin: 0;
   }
 
-  body {
-    line-height: 1.5;
+  h2 {
+    margin: 4rem 0 2rem 0;
+  }
+
+  .employer-link {
+    display: inline-block;
   }
 
   .container {
-    margin: 3rem;
+    margin: 3rem 1.2rem;
+  }
+
+  .horizontal-list {
+    margin-top: 4rem;
+  }
+
+  li {
+    margin-bottom: 1rem;
   }
 }
