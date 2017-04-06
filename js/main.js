@@ -55,5 +55,5 @@ window.onload = () => {
   const gifs = document.querySelectorAll(".gif")
   gl.gifLinks( gifs )
 
-  setInterval(swapFavicon, 1000)
+  setInterval(swapFavicon, 1500)
 }
