@@ -36,7 +36,10 @@ const sketchFn = (s) => {
   }
 }
 
-const myP5 = new p5(sketchFn, 'p5-canvas')
+const isMobileDevice = () => {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
 const favicon = document.querySelector("#favicon")
 let iconOne = true
 
@@ -51,9 +54,19 @@ const swapFavicon = () => {
   iconOne = !iconOne;
 }
 
+
 window.onload = () => {
+  let myP5
+
+  // for some reason this sketch causes the links on mobile to not work, so disable.
+  if (!isMobileDevice()) {
+    myP5 = new p5(sketchFn, 'p5-canvas')
+  }
+
   const gifs = document.querySelectorAll(".gif")
   gl.gifLinks( gifs )
 
-  setInterval(swapFavicon, 1500)
+  if (!isMobileDevice()) {
+    setInterval(swapFavicon, 1500)
+  }
 }
