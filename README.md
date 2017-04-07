@@ -2,8 +2,8 @@
 
 First `yarn install` to get all the dependencies.
 
-Install `http-server` via `yarn add global http-server`.
+`yarn start` to run webpack-dev-server. Site should be available at `localhost:8080`.
 
-`yarn run build` to create a build of the website in the `dist` folder.
-`yarn run start` run a webserver out of the `dist` folder.
+`yarn build` to create a build of the website in the `dist` folder.
+
 

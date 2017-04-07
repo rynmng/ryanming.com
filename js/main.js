@@ -1,5 +1,5 @@
 import p5 from 'p5'
-import * as gl from './gifLinks.js'
+import * as gl from './gifLinks'
 
 const sketchFn = (s) => {
   let yOffset = 0
