@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   context: path.join(__dirname, 'js'),
@@ -11,11 +12,20 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /gifLinks.js$/, loaders: ["exports-loader?gifLinks=GifLinks"] },
+      {
+        test: /gifLinks.js$/,
+        loaders: ["exports-loader?gifLinks=GifLinks"]
+      },
       {
         test: /\.js$/,
         include: path.join(__dirname, 'js'),
         loader: "babel-loader"
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+            use: 'css-loader'
+        })
       }
     ]
   },
@@ -23,6 +33,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
       inject: 'body'
-    })
+    }),
+    new ExtractTextPlugin('styles/[name].[contenthash].css'),
   ]
 }
